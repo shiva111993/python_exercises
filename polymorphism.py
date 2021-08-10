@@ -6,27 +6,46 @@
 #4. Method Overriding
 
 # Duck Typing
+# class Duck:
+#     def walk(self):
+#         print("thapak thapak thapak thapak")
+# class Horse:
+#     def walk(self):
+#         print("tabdak tabdak tabdak tabdak")
+# class cat:
+#     def talk(selt):
+#         print("Meow Meow")
+# def myfunction(obj):
+#     obj.walk()
+# d = Duck()
+# myfunction(d)
+# d = Horse()
+# myfunction(d)
+# --or
+# d = cat()
+# myfunction(d)
+# ----------------------Strong Typing
 class Duck:
     def walk(self):
         print("thapak thapak thapak thapak")
 class Horse:
     def walk(self):
         print("tabdak tabdak tabdak tabdak")
-class cat:
+class Cat:
     def talk(selt):
         print("Meow Meow")
 def myfunction(obj):
-    obj.walk()
-
+    # hasattr(obj, "walk") "True or False" checking walk method is available or not.
+    if hasattr(obj, "walk"):
+        obj.walk()
+    if hasattr(obj, "talk"):
+        obj.talk()
 d = Duck()
 myfunction(d)
 d = Horse()
 myfunction(d)
-# --or
-
-# d = cat()
-# myfunction(d)
-
+d = Cat()
+myfunction(d)
 #------------------ method overloading
 # class Myclass:
 #     def sum(self, a=None,b=None,c=None):
